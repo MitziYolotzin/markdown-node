@@ -1,1 +1,1 @@
-Markdown Node Blog: NodeJS, EXpress, EJS, MongoDB
+Markdown Node Blog: NodeJS, Express, EJS, MongoDB

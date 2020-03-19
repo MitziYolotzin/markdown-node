@@ -10,7 +10,8 @@ mongoose.connect('mongodb://localhost/blog', {
 //ejs to html
 app.set('view engine', 'ejs')
 
-app.use('/articles', articleRouter)
+//access parameters
+app.use(express.urlencoded({ extended:false }))
 
 app.get('/', (req, res) => {
     const articles = [{
@@ -27,5 +28,8 @@ app.get('/', (req, res) => {
     //res.send('Hello world')
     res.render('articles/index', {articles: articles})
 })
+
+app.use('/articles', articleRouter)
+
 
 app.listen(5000)

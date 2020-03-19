@@ -3,6 +3,10 @@ const mongoose = require('mongoose')
 const articleRouter = require('./routes/articles')
 const app = express()
 
+mongoose.connect('mongodb://localhost/blog', {
+    useNewUrlParser: true, useUnifiedTopology: true
+})
+
 //ejs to html
 app.set('view engine', 'ejs')
 

@@ -8,6 +8,7 @@ mongoose.connect('mongodb://localhost/blog', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
+mongoose.set('useCreateIndex', true);
 
 //ejs to html
 app.set('view engine', 'ejs')

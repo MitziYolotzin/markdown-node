@@ -25,7 +25,7 @@ const articleSchema = new mongoose.Schema({
         }
     })
     //validate each article, create our slug from our title
-articleSchema.pre('validate', function() {
+articleSchema.pre('validate', function(next) {
     if (this.title) {
         this.slug = slugify(this.title, {
             lower: true,
@@ -33,6 +33,7 @@ articleSchema.pre('validate', function() {
 
         })
     }
+    next()
 })
 
 //export model and schema
